@@ -1,0 +1,100 @@
+{
+    "animals": [
+        { "id": 1, "name": "Doodles", "breed": "Poodle"},
+        { "id": 2, "name": "Decker", "breed": "German Shepherd" },
+        { "id": 3, "name": "Esme", "breed": "Pitbull" },
+        { "id": 4, "name": "Joe", "breed": "Pomeranian"},
+        { "id": 5, "name": "Donald", "breed": "Siberian Husky" },
+        { "id": 6, "name": "Barack", "breed": "Pug" },
+        { "id": 7, "name": "G.W.", "breed": "Chihuahua"},
+        { "id": 8, "name": "Bill", "breed": "Boxer" },
+        { "id": 9, "name": "George", "breed": "Pekingese" },
+        { "id": 10, "name": "Ronald", "breed": "Greyhound"},
+        { "id": 11, "name": "Jimmy", "breed": "Boston Terrier" },
+        { "id": 12, "name": "Gerald", "breed": "Dalmatian" },
+        { "id": 13, "name": "Richard", "breed": "Afghan Hound"},
+        { "id": 14, "name": "Lyndon", "breed": "Shepherd" },
+        { "id": 15, "name": "John", "breed": "Toy Poodle" }
+    ],
+    "customers": [
+        {
+            "id": 1,
+            "name": "Hannah Hall",
+            "address": "7002 Chestnut Ct"
+        },
+        {
+            "id": 2,
+            "name": "David Puddy",
+            "address": "1812 wilcrest Dr"
+        },
+        {
+            "id": 3,
+            "name": "Joe Mayo",
+            "address": "1898 covington Pike"
+        },
+        {
+            "id": 4,
+            "name": "Art Vandelay",
+            "address": "766 Dickinson St"
+        },
+        {
+            "id": 5,
+            "name": "Bob Sacamano",
+            "address": "1338 Brooksie Rd"
+        },
+        {
+            "id": 6,
+            "name": "Joe Bookman",
+            "address": "9852 Roundabout Ct"
+        }
+    ],
+    "employees": [
+        {
+            "id": 1,
+            "name": "Emma Beaton",
+            "address": "Nashville North"
+        },
+        {
+            "id": 2,
+            "name": "Newman Postman",
+            "address": "Nashville South"
+        },
+        {
+            "id": 3,
+            "name": "Jay Peterman",
+            "address": "Nashville Gulch"
+        }
+        {
+            "id": 4,
+            "name": "Elaine Benes",
+            "address": "Nashville North"
+        },
+        {
+            "id": 5,
+            "name": "Tim Whatley",
+            "address": "Nashville South"
+        },
+        {
+            "id": 6,
+            "name": "Lloyd Braun",
+            "address": "Nashville Gulch"
+        }
+    ],
+    "locations": [
+        {
+            "id": 1,
+            "name": "Nashville North",
+            "address": "8422 Johnson Pike"
+        },
+        {
+            "id": 2,
+            "name": "Nashville South",
+            "address": "209 Emory Drive"
+        },
+        {
+            "id": 3,
+            "name": "Nashville Gulch",
+            "address": "1055 Pine Street"
+        }
+    ]
+}
