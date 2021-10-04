@@ -11,11 +11,14 @@ import React from "react"
 import { NavBar } from "./nav/NavBar"
 import { ApplicationViews } from "./ApplicationViews"
 import "./Kennel.css"
+import { Time } from "./Time"
+
 
 export const Kennel = () => (
     <>
         <NavBar />
         <ApplicationViews />
+        <Time />
     </>
 )
 

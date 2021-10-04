@@ -10,4 +10,22 @@ export const getAllAnimals = () => {
   return fetch(`${remoteURL}/animals`)
   .then(res => res.json())
 }
+//10-4-21
+export const addAnimal = (newAnimal) => {
+  return fetch(`${remoteURL}/animals`, {
+      method: "POST",
+      headers: {
+          "Content-Type": "application/json"
+      },
+      body: JSON.stringify(newAnimal)
+  }).then(response => response.json())
+}
+
+/* 9-31-2021 Passing Functionality as Props*/
+
+export const deleteAnimal = (id) => {
+  return fetch(`${remoteURL}/animals/${id}`, {
+    method: "DELETE"
+  }).then(result => result.json())
+}
 
