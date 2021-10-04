@@ -1,30 +1,78 @@
 import React, { useState, useEffect } from 'react';
 //import the components we will need
 import { AnimalCard } from './AnimalCard';
-import { getAllAnimals, getAnimalById } from '../../modules/AnimalManager';
+import { getAllAnimals, deleteAnimal } from '../../modules/AnimalManager';
+import { useHistory } from "react-router";
 
 export const AnimalList = () => {
   // The initial state is an empty array
   const [animals, setAnimals] = useState([]);
-
+  const history = useHistory();
   const getAnimals = () => {
     // After the data comes back from the API, we
     //  use the setAnimals function to update state
     return getAllAnimals().then(animalsFromAPI => {
-      setAnimals(animalsFromAPI)
+      console.log(animalsFromAPI);
+      setAnimals(animalsFromAPI);
     });
   };
 
+  const handleDeleteAnimal = id => {
+    deleteAnimal(id)
+    .then(() => getAllAnimals().then(setAnimals));
+};
   // got the animals from the API on the component's first render
   useEffect(() => {
+    //console.log("useEffect Invoked")
     getAnimals();
   }, []);
 
   // Finally we use .map() to "loop over" the animals array to show a list of animal cards
   return (
+    <>
+      //add this button above your display of animal cards
+<section className="section-content">
+  <button type="button"
+      className="btn"
+      onClick={() => {history.push("/animals/create")}}>
+      Admit Animal
+  </button>
+</section>
+
+    
     <div className="container-cards">
-      {animals.map(animal => <AnimalCard />)}
+      {animals.map(animal => 
+      <AnimalCard 
+        key={animal.id} 
+        animal={animal} 
+        handleDeleteAnimal={handleDeleteAnimal} />)}
+    </div>
+    </>
+  );
+};
+
+/* 9-31-2021 Passing Functionality as Props 
+            Add the following function to your <AnimalList> component 
+            and remember to import the methods from AnimalManager.
+
+  const handleDeleteAnimal = id => {
+    deleteAnimal(id)
+    .then(() => getAllAnimals().then(setAnimals));
+};
+
+
+             Now we can pass the handleDeleteAnimal function 
+             to a child component giving the child component 
+             the ability to invoke the function found on the parent.
+ return (
+    <div className="container-cards">
+      {animals.map(animal =>
+        <AnimalCard
+          key={animal.id}
+          animal={animal}
+          handleDeleteAnimal={handleDeleteAnimal} />)}
     </div>
   );
 };
+*/
 
