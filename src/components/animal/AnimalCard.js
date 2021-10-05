@@ -1,29 +1,54 @@
 import React from 'react';
 import "./Animal.css";
 import { Link } from "react-router-dom";
-import {firstLetterCase} from '../../modules/helpers'
-
+import { firstLetterCase } from '../../modules/helpers'
+import { useHistory } from "react-router-dom"
 
 export const AnimalCard = ({ animal, handleDeleteAnimal }) => {
+  const history = useHistory();
+
   return (
-    <div className="card">
-      <div className="card-content">
-        <picture>
-         {/* <img src={require('./dog.svg')} alt="My Dog" /> */}
-        </picture>
-        <h3>Name: <span className="card-petname">
-          {animal.name}
-        </span></h3>
-        <p>Breed: {animal.breed}</p>
+    <section className="animal card" >
+        <h3 className="animal__name">{firstLetterCase(animal.name)}</h3>
+        <div className="animal__breed">Breed: {animal.breed}</div>
         <button type="button" onClick={() => handleDeleteAnimal(animal.id)}>Discharge</button>
         <Link to={`/animals/${animal.id}`}>
-          <button>Details</button>
+            <button>Details</button>
         </Link>
-
-      </div>
-    </div>
-  );
+        <button type="button"
+            onClick={() => history.push(`/animals/${animal.id}/edit`)}>
+            Edit
+        </button>
+    </section>
+)
 }
+
+
+
+  
+//   return (
+//     <div className="card">
+//       <div className="card-content">
+//         <picture>
+//          {/* <img src={require('./dog.svg')} alt="My Dog" /> */}
+//         </picture>
+//         <h3>Name: <span className="card-petname">
+//           {animal.name}
+//         </span></h3>
+//         <p>Breed: {animal.breed}</p>
+//         <button type="button" onClick={() => handleDeleteAnimal(animal.id)}>Discharge</button>
+//         <Link to={`/animals/${animal.id}`}>
+//           <button>Details</button>
+//         </Link>
+//         <button type="button"
+//   onClick={() => history.push(`/animals/${animal.id}/edit`)}>
+//   Edit
+// </button>
+
+//       </div>
+//     </div>
+//   );
+// }
 
 
 /* Cut Out line between 

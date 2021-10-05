@@ -44,14 +44,26 @@ const setAuthUser = (user) => {
 	              <Register setAuthUser={setAuthUser}/>
             </Route>
 
-            <Route path="/animals/:animalId(\d+)">
+            <Route exact path="/animals/:animalId(\d+)">
                <AnimalDetail />
             </Route>
           
             <Route path="/animals/create">
               <AnimalForm />
             </Route>
+            
+            <Route path="/animals/:animalId(\d+)/edit">
+                {isAuthenticated ? <AnimalEditForm />: <Redirect to="/login" />}
+            </Route>
 
+            {/* <Route path="/animals/:animalId(\d+)/edit">
+                if (isAuthenticated()) {
+                return <AnimalEditForm />
+                } else {
+                return <Redirect to="/login" />
+                }
+            </Route> */}
+          
             {/* Render the customer list when http://localhost:3000/customers */}
             <Route exact path="/customers">
               <CustomerList />

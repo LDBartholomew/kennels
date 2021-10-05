@@ -3,7 +3,7 @@ import { getAnimalById } from '../../modules/AnimalManager';
 import './AnimalDetail.css';
 import { useParams, useHistory } from "react-router-dom";
 import { getAllAnimals, deleteAnimal } from '../../modules/AnimalManager';
-import { getAllCustomers } from '../../modules/CustomerManager';
+
 
 export const AnimalDetail = () => {
   const [animal, setAnimal] = useState({ name: "", breed: "" });
