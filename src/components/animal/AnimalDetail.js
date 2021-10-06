@@ -6,7 +6,7 @@ import { getAllAnimals, deleteAnimal } from '../../modules/AnimalManager';
 import { getAllCustomers } from '../../modules/CustomerManager';
 
 export const AnimalDetail = () => {
-  const [animal, setAnimal] = useState({ name: "", breed: "" });
+  const [animal, setAnimal] = useState({ name: "", breed: "", location: "", customer: "" });
   const [isLoading, setIsLoading] = useState(true);
 
   const {animalId} = useParams();
@@ -25,12 +25,12 @@ export const AnimalDetail = () => {
     //getAnimalById(id) from AnimalManager and hang on to the data; put it into state
     console.log("useEffect", animalId)
     getAnimalById(animalId)
-      .then(animal => {
+      .then(animalObj => {
         setAnimal({
-          name: animal.name,
-          breed: animal.breed,
-          location: animal.location.name,
-          customer: animal.customer.name
+          name: animalObj.name,
+          breed: animalObj.breed,
+          location: animalObj.location.name,
+          customer: animalObj.customer.name
         });
       });
        setIsLoading(false);
@@ -41,8 +41,8 @@ export const AnimalDetail = () => {
       <h3 className="animal__name">{animal.name}</h3>
       <div className="animal__breed">{animal.breed}</div>
       {/* What's up with the question mark???? See below.*/}
-      <div className="animal__location">Location: {animal.location.name}</div>
-      <div className="animal__owner">Customer: {animal.customer.name}</div>
+      <div className="animal__location">Location: {animal.location}</div>
+      <div className="animal__owner">Customer: {animal.customer}</div>
       {/* <button type="button" disabled={isLoading} onClick={handleDelete}> */}
           {/* Discharge */}
         {/* </button> */}

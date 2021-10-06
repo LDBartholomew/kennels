@@ -3,7 +3,9 @@
     {
       "id": 1,
       "name": "Doodles",
-      "breed": "Poodle"
+      "breed": "Poodle",
+      "locationId": 1,
+      "customerId": 1
     },
     {
       "id": 2,
