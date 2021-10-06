@@ -15,14 +15,14 @@ import { Register } from "./auth/Register"
 import { EmployeeCard } from "./employee/EmployeeCard"
 import { LocationCard } from "./location/LocationCard"*/
 
-export const ApplicationViews = () => {
+export const ApplicationViews = ( { isAuthenticated, setAuthUser  } ) => {
+// 3:45 Tue 10-5-21 Commented Out
+//   const [isAuthenticated, setIsAuthenticated] = useState(sessionStorage.getItem("kennel_customer") !== null)
 
-  const [isAuthenticated, setIsAuthenticated] = useState(sessionStorage.getItem("kennel_customer") !== null)
-
-const setAuthUser = (user) => {
-	sessionStorage.setItem("kennel_customer", JSON.stringify(user))
-	setIsAuthenticated(sessionStorage.getItem("kennel_customer") !== null)
-}
+// const setAuthUser = (user) => {
+// 	sessionStorage.setItem("kennel_customer", JSON.stringify(user))
+// 	setIsAuthenticated(sessionStorage.getItem("kennel_customer") !== null)
+// }
 
     return (
         <>
